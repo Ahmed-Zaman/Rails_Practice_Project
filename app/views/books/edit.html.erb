@@ -1,0 +1,19 @@
+<h1>Edit Books<h1>
+
+<%= form_with model: @book do |form| %>
+    
+    
+    <h4>Title<h4>
+    <%= form.text_field :title %>
+    <%= @book.errors.full_messages_for(:title) %>
+    
+    <h4>Description<h4>
+    <%= form.text_area :body, size: "60x10" %>
+
+    <%= @book.errors.full_messages_for(:body) %>
+
+    <div>
+    <%= form.submit "Save Changes" %>
+    </div>
+
+<% end %>
